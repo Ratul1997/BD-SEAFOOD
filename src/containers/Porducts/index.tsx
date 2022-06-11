@@ -61,12 +61,7 @@ export default function Products({navigation, route}) {
   }, [productReducer?.products]);
 
   const getProductsByCategory = (categoryId, productLists = []) => {
-    return productLists
-      .filter(product => product?.category?.id === categoryId)
-      .sort((a, b) => {
-        if (a?.order && b?.order) return a.order > b.order;
-        else return true;
-      });
+    return productLists.filter(product => product?.category?.id === categoryId);
   };
   const onNavigate = () => {
     navigation.navigate('Shopping Bag');
@@ -95,14 +90,9 @@ export default function Products({navigation, route}) {
         }
       }
     });
-    for (let i = 0; i < productBySection.length; i++) {
-      const data = productBySection[i].data;
-
-      productBySection[i].data = data.sort((a, b) => {
-        if (a?.order && b?.order) return a.order > b.order;
-        else return true;
-      });
-    }
+    productBySection.sort((a, b) => {
+      return a?.id >= b?.id;
+    });
     return productBySection;
   };
 
