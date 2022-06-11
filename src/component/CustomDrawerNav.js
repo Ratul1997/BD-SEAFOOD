@@ -15,6 +15,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getFontFamily, shadows} from '../helpers/styles/customStyles'
 import {clearUserInfos} from '../redux/actions/userActions'
 import userServices from '../helpers/services/userServices'
+import CustomButton from './CustomButton'
 
 export default function CustomDrawerNav (props) {
   const progress = useDrawerProgress()
@@ -33,7 +34,7 @@ export default function CustomDrawerNav (props) {
           ...shadows,
         }}
         onPress={() => {
-          props.navigation.navigate(!!userInfo?.uid ? 'Profile' : 'Login')
+          !!userInfo?.uid && props.navigation.navigate('Profile')
         }}>
         <View style={{width: '20%'}}>
           {/* <CustomIcon
@@ -55,7 +56,7 @@ export default function CustomDrawerNav (props) {
               fontSize: RFValue(14),
               fontFamily: getFontFamily(),
             }}>
-            {userInfo?.shopName ?? 'Login'}
+            {userInfo?.shopName ?? 'Bd Seafood Limited'}
           </Text>
         </View>
         {!!userInfo?.uid ? (
@@ -75,6 +76,18 @@ export default function CustomDrawerNav (props) {
       </Pressable>
 
       <DrawerItemList {...props} />
+
+      {!userInfo?.uid ? (
+        <CustomButton
+          width='90%'
+          bordered
+          title={'LOG IN'}
+          borderRadius={8}
+          customStyle={{marginVertical: 20, alignSelf: 'center'}}
+          filled
+          onPress={() => props.navigation.navigate('Login')}
+        />
+      ) : null}
     </DrawerContentScrollView>
   )
 }
