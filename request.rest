@@ -1,0 +1,18 @@
+###
+POST http://tt.bdtrading.ie/
+Content-Type: application/json
+
+{
+  "shopName": "ABC",
+  "totalOrder": 5,
+  "phoneNo": "015515",
+  "orderedOn": "13-05-2021",
+  "address": "123/234, Dhanmondi,Dhaka",
+  "orders": [
+    {
+      "productName": "Check",
+      "quantity": 5,
+      "amountPerUnit": 12
+    }
+  ]
+}

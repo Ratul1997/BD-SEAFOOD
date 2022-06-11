@@ -1,0 +1,2 @@
+export const STORE_USER_INFO = 'STORE_USER_INFO'
+export const CLEAR_USER_INFO = 'CLEAR_USER_INFO'

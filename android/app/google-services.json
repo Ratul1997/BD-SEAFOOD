@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "40505273726",
+    "project_id": "bdseafood-102b3",
+    "storage_bucket": "bdseafood-102b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40505273726:android:7b5c6254a1ef762b83172f",
+        "android_client_info": {
+          "package_name": "com.bdseafoodltd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40505273726-78qr18p5gmeh2ccmqc9vmdvj69fs9787.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfMtvzNnza54RHX1-cTMqKJ8R-Pnjri3E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40505273726-78qr18p5gmeh2ccmqc9vmdvj69fs9787.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
