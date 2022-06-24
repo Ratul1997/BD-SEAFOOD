@@ -35,14 +35,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera is required to run the app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
-		<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Library is required to run the app</string>
-		<key>NSCameraUsageDescription</key>
-	<string>Camera is required to run the app</string>
-		<key>NSMicrophoneUsageDescription</key>
+	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone is required to run the app</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library is required to run the app</string>
 	<key>UILaunchStoryboardName</key>
 	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>
