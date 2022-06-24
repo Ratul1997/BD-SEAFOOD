@@ -7,6 +7,7 @@ export default function CustomView(props: any) {
   return (
     <View style={{flex: 1, backgroundColor: theme.backgroundColor}}>
       <SafeAreaView
+      edges={['bottom', 'left', 'right']} 
         style={[
           {
             flex: 1,

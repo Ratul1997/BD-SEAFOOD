@@ -160,12 +160,13 @@ export default function Products({navigation, route}) {
             dispatch(fetchAllProducts());
           }}
           refreshing={onRefresh}
+          // stickySectionHeadersEnabled={false}
           ItemSeparatorComponent={ItemSeparator}
           renderSectionHeader={({section: {title}}) => (
             <Text
               style={{
-                marginHorizontal: 15,
-                marginVertical: 10,
+                paddingHorizontal: 15,
+                paddingVertical: 10,
                 color: Colors.black,
                 fontFamily: getFontFamily(),
                 fontWeight: '700',
