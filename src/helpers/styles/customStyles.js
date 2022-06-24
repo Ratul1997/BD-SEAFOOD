@@ -1,7 +1,7 @@
 import {Platform} from 'react-native'
 
 export const getFontFamily = () => {
-  return Platform.OS !== 'ios' ? 'Roboto-Regular' : 'Academy Engraved LET'
+  return Platform.OS !== 'ios' ? 'Roboto-Regular' : 'Times New Roman'
 }
 
 export const shadows = {
