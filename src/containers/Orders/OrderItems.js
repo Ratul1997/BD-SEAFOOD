@@ -1,38 +1,39 @@
-import {View, Text, Pressable} from 'react-native'
-import React, {useState, useEffect} from 'react'
-import {Colors} from '../../config/colors'
-import {getFontFamily, shadows} from '../../helpers/styles/customStyles'
-import {convertSecondsToDate, formatDate} from '../../helpers/utils'
-import {totalCartItem} from '../Porducts'
-import {RFValue} from 'react-native-responsive-fontsize'
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler'
-import ProductCard from '../Porducts/ProductCard'
-import CustomIcon from '../../component/CustomIcon'
+import {View, Text, Pressable} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {Colors} from '../../config/colors';
+import {getFontFamily, shadows} from '../../helpers/styles/customStyles';
+import {convertSecondsToDate, formatDate} from '../../helpers/utils';
+import {totalCartItem} from '../Porducts';
+import {RFValue} from 'react-native-responsive-fontsize';
+import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import ProductCard from '../Porducts/ProductCard';
+import CustomIcon from '../../component/CustomIcon';
 
-export default function OrderItems ({item}) {
-  const [isCollapsed, setIsCollapsed] = useState(true)
+export default function OrderItems({item}) {
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const titleStyle = {
     color: Colors.black,
     width: '50%',
     paddingRight: 10,
     fontWeight: 'bold',
     fontFamily: getFontFamily(),
-  }
+  };
   const valueSTyle = {
     color: Colors.black,
     width: '50%',
     fontFamily: getFontFamily(),
-  }
+  };
   const rowStyle = {
     paddingHorizontal: 15,
     paddingVertical: 5,
     display: 'flex',
     flexDirection: 'row',
-  }
-  const date = formatDate(convertSecondsToDate(item.orderedOn))
+  };
+  const date = formatDate(convertSecondsToDate(item.orderedOn));
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed)
-  }
+    setIsCollapsed(!isCollapsed);
+  };
+  console.log('item', item.notes);
   const renderItem = ({item, index}) => {
     return (
       <ProductCard
@@ -42,8 +43,8 @@ export default function OrderItems ({item}) {
         imageUrl={item.uri}
         onOrder={true}
       />
-    )
-  }
+    );
+  };
   return (
     <Pressable style={{margin: 10}} onPress={toggleCollapse}>
       <View style={[rowStyle, {alignItems: 'center'}]}>
@@ -93,6 +94,12 @@ export default function OrderItems ({item}) {
             <Text style={titleStyle}>Phone no:</Text>
             <Text style={valueSTyle}>{item.phoneNo}</Text>
           </View>
+          {item?.notes && (
+            <View style={rowStyle}>
+              <Text style={titleStyle}>Notes:</Text>
+              <Text style={valueSTyle}>{item.notes}</Text>
+            </View>
+          )}
           <View style={rowStyle}>
             <Text style={titleStyle}>Address:</Text>
             <Text style={valueSTyle}>{item.address}</Text>
@@ -114,5 +121,5 @@ export default function OrderItems ({item}) {
         </>
       ) : null}
     </Pressable>
-  )
+  );
 }

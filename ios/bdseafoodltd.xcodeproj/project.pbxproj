@@ -11,12 +11,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		35857D4E29116C54006CC5B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35857D4D29116C54006CC5B5 /* GoogleService-Info.plist */; };
 		5F963D9005EA4195C571D939 /* libPods-bdseafoodltd-bdseafoodltdTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8B0A72BA81E80A1FB23C0C /* libPods-bdseafoodltd-bdseafoodltdTests.a */; };
 		651A23620212319C52C30B36 /* libPods-bdseafoodltd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C5E17F2906A50C38EA926B /* libPods-bdseafoodltd.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A736CAF5286594B0001C2A43 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A736CAF4286594B0001C2A43 /* BootSplash.storyboard */; };
-		A7BCE1F42865703C009F71BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE1F32865703C009F71BC /* GoogleService-Info.plist */; };
-		A7BCE1F628657119009F71BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7BCE1F528657119009F71BC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +39,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = bdseafoodltd/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bdseafoodltd/main.m; sourceTree = "<group>"; };
 		255706B4126A76CDC06549EF /* Pods-bdseafoodltd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bdseafoodltd.release.xcconfig"; path = "Target Support Files/Pods-bdseafoodltd/Pods-bdseafoodltd.release.xcconfig"; sourceTree = "<group>"; };
+		35857D4D29116C54006CC5B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		399B61D0823D02F251C34871 /* Pods-bdseafoodltd-bdseafoodltdTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bdseafoodltd-bdseafoodltdTests.release.xcconfig"; path = "Target Support Files/Pods-bdseafoodltd-bdseafoodltdTests/Pods-bdseafoodltd-bdseafoodltdTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = bdseafoodltd/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C8B0A72BA81E80A1FB23C0C /* libPods-bdseafoodltd-bdseafoodltdTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bdseafoodltd-bdseafoodltdTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFA5A1D281DFE0B5D21DE7F /* Pods-bdseafoodltd-bdseafoodltdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bdseafoodltd-bdseafoodltdTests.debug.xcconfig"; path = "Target Support Files/Pods-bdseafoodltd-bdseafoodltdTests/Pods-bdseafoodltd-bdseafoodltdTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C5E17F2906A50C38EA926B /* libPods-bdseafoodltd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bdseafoodltd.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A736CAF4286594B0001C2A43 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = bdseafoodltd/BootSplash.storyboard; sourceTree = "<group>"; };
-		A7BCE1F32865703C009F71BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/mdrakibulislam/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A7BCE1F528657119009F71BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Users/mdrakibulislam/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC7F563B1A2510BB22CDCCBF /* Pods-bdseafoodltd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bdseafoodltd.debug.xcconfig"; path = "Target Support Files/Pods-bdseafoodltd/Pods-bdseafoodltd.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -92,7 +90,6 @@
 		13B07FAE1A68108700A75B9A /* bdseafoodltd */ = {
 			isa = PBXGroup;
 			children = (
-				A7BCE1F528657119009F71BC /* GoogleService-Info.plist */,
 				A736CAF4286594B0001C2A43 /* BootSplash.storyboard */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -124,7 +121,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				A7BCE1F32865703C009F71BC /* GoogleService-Info.plist */,
+				35857D4D29116C54006CC5B5 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* bdseafoodltd */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* bdseafoodltdTests */,
@@ -253,10 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A736CAF5286594B0001C2A43 /* BootSplash.storyboard in Resources */,
+				35857D4E29116C54006CC5B5 /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				A7BCE1F628657119009F71BC /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				A7BCE1F42865703C009F71BC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JQRH7P49D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = bdseafoodltd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,7 +518,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = bdseafood.ltd;
 				PRODUCT_NAME = bdseafoodltd;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -536,6 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JQRH7P49D;
 				INFOPLIST_FILE = bdseafoodltd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -546,7 +544,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = bdseafood.ltd;
 				PRODUCT_NAME = bdseafoodltd;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

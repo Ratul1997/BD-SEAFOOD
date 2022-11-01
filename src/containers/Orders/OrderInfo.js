@@ -1,19 +1,19 @@
-import {View, Text} from 'react-native'
-import React, {useState} from 'react'
-import CustomView from '../../component/CustomView'
+import {View, Text} from 'react-native';
+import React, {useState} from 'react';
+import CustomView from '../../component/CustomView';
 import {
   KeyboardAwareFlatList,
   KeyboardAwareScrollView,
-} from 'react-native-keyboard-aware-scroll-view'
-import CustomTextInput from '../../component/CustomTextInput'
-import CustomButton from '../../component/CustomButton'
-import {useDispatch, useSelector} from 'react-redux'
-import PromiseModules from '../../helpers/PromiseModules'
-import {clearCart} from '../../redux/actionTypes/cartActions'
-import {storeUserInfos} from '../../redux/actions/userActions'
-import {totalCartItem} from '../Porducts'
+} from 'react-native-keyboard-aware-scroll-view';
+import CustomTextInput from '../../component/CustomTextInput';
+import CustomButton from '../../component/CustomButton';
+import {useDispatch, useSelector} from 'react-redux';
+import PromiseModules from '../../helpers/PromiseModules';
+import {clearCart} from '../../redux/actionTypes/cartActions';
+import {storeUserInfos} from '../../redux/actions/userActions';
+import {totalCartItem} from '../Porducts';
 
-import axios from 'axios'
+import axios from 'axios';
 
 const inputOptions = [
   {
@@ -26,8 +26,6 @@ const inputOptions = [
     id: 1,
     key: 'address',
     label: 'Address',
-    multiline: true,
-    numOfLine: 5,
     secured: false,
   },
   {
@@ -42,7 +40,16 @@ const inputOptions = [
     label: 'Email',
     secured: false,
   },
-]
+
+  {
+    id: 1,
+    key: 'notes',
+    label: 'Notes (If any query)',
+    secured: false,
+    multiline: true,
+    numOfLine: 5,
+  },
+];
 
 const adminInputOptions = [
   {
@@ -65,20 +72,21 @@ const adminInputOptions = [
     label: 'Phone No',
     secured: false,
   },
-]
+];
 
-export default function OrderInfo ({navigation, route}) {
-  const cartItems = useSelector(state => state.cartReducer.products)
-  const userInfo = useSelector(state => state.userReducer.userInfo)
-  const dispatch = useDispatch()
+export default function OrderInfo({navigation, route}) {
+  const cartItems = useSelector(state => state.cartReducer.products);
+  const userInfo = useSelector(state => state.userReducer.userInfo);
+  const dispatch = useDispatch();
   const initialState = {
     shopName: '',
     address: '',
     phoneNo: '',
     email: '',
-  }
-  const [state, setState] = useState(initialState)
-  const [isLoading, setIsLoading] = useState(false)
+    notes: '',
+  };
+  const [state, setState] = useState(initialState);
+  const [isLoading, setIsLoading] = useState(false);
   useState(() => {
     if (route.name === 'Profile' || !!userInfo?.uid) {
       setState({
@@ -87,15 +95,15 @@ export default function OrderInfo ({navigation, route}) {
         address: userInfo.address,
         phoneNo: userInfo.phoneNo,
         email: userInfo.email,
-      })
+      });
     }
-  }, [])
+  }, []);
   const onChange = (key, value) => {
     setState({
       ...state,
       [key]: value,
-    })
-  }
+    });
+  };
 
   const onOrder = async () => {
     const data = {
@@ -106,21 +114,22 @@ export default function OrderInfo ({navigation, route}) {
       items: [...cartItems],
       orderedOn: new Date(),
       uid: userInfo?.uid ?? null,
-    }
-    console.log(data.items)
+      notes: state.notes,
+    };
+    console.log(data.items);
     if (
       !state.shopName.trim() ||
       !state.address.trim() ||
       !state.phoneNo.trim() ||
       !state.email.trim()
     ) {
-      return alert('Fields should not be empty!')
+      return alert('Fields should not be empty!');
     }
     const headers = {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    };
     const jsonData = {
       shopName: data.shopName,
       address: data.address.trim(),
@@ -133,69 +142,69 @@ export default function OrderInfo ({navigation, route}) {
           productName: item.productName ?? '',
           quantity: item.quantity ?? '',
           amountPerUnit: item.amountPerUnit ?? '',
-        }
+        };
       }),
-    }
+    };
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const res = await PromiseModules.storeDataInCollection(
         'Orders',
         null,
         data,
-      )
-      await axios.post('http://tt.bdtrading.ie/', jsonData, headers)
-      dispatch(clearCart())
-      setIsLoading(false)
+      );
+      axios.post('http://tt.bdtrading.ie/', jsonData, headers);
+      dispatch(clearCart());
+      setIsLoading(false);
       navigation.reset({
         index: 0,
         routes: [{name: 'OrderConfirm'}],
-      })
+      });
     } catch (error) {
-      console.log(error)
-      setIsLoading(false)
+      console.log(error);
+      setIsLoading(false);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
   const onUpdate = async () => {
     const data = {
       shopName: state.shopName,
       address: state.address.trim(),
       phoneNo: state.phoneNo,
       email: state.email,
-    }
-    setIsLoading(true)
+    };
+    setIsLoading(true);
     try {
       const res = await PromiseModules.updateDocumentsById(
         'Users',
         userInfo.uid,
         data,
-      )
+      );
       dispatch(
         storeUserInfos({
           ...userInfo,
           ...data,
         }),
-      )
-      alert('Updated!')
+      );
+      alert('Updated!');
     } catch (error) {
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const renderItem = ({item, index}) => {
     return (
       <CustomTextInput
-        placeholder='Type Here'
+        placeholder="Type Here"
         value={state[item.key]}
         title={item.label}
         onChangeText={text => onChange(item.key, text)}
         numberOfLines={item.numOfLine}
         multiline={item?.multiline ?? false}
       />
-    )
-  }
+    );
+  };
   return (
     <CustomView>
       <KeyboardAwareFlatList
@@ -204,7 +213,7 @@ export default function OrderInfo ({navigation, route}) {
         keyExtractor={(item, index) => item.id + index}
         ListFooterComponent={() => (
           <CustomButton
-            width='90%'
+            width="90%"
             bordered
             title={route?.name === 'Profile' ? 'Update' : 'Order'}
             borderRadius={8}
@@ -219,5 +228,5 @@ export default function OrderInfo ({navigation, route}) {
         }}
       />
     </CustomView>
-  )
+  );
 }
